@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('head.ejs') %>
+    <body style = "background-color:powderblue;">
+      <%- include('nav.ejs') %>
+        <div style="margin-top: 100px;"></div>
+        <div style="height: 500px; width:500px; margin:0 auto;">
+            <form method="post" action="/loginUser" >
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Consider as your user name">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" name="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6"><button type="submit" class="btn btn-primary mb-2 bg-success text-white">Login</button></div>
+                    <div class="form-group col-md-6"><button formaction='/Register' type="submit" class="btn btn-primary mb-2 bg-danger text-white">Register</button></div>
+                    
+                </div>
+                
+            </form>
+        </div>
+        
+    
+    </body>
+
+</html>

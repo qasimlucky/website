@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <%- include('head.ejs') %>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+<body style = "background-color:powderblue;">
+  <%- include('nav.ejs') %>
+    
+  <div class="card-columns p-2" style="width: 100%; margin-top: 50px;" >
+    <% rows.forEach(function(row) { %>
+    <div class="card" style="height: 25rem; max-width: 20rem;">
+      <img class="card-img-top" style="height: 14rem;" src="data:image/png;base64,<%=row.ImageData%>" alt="Card image cap">
+      
+      <div class="card-body card-footer">
+        <div class="">
+          <h5 class="card-title"><strong><%= row.FirstName %></strong></h5>
+          <li>Email: <%= row.Email %>,</li>
+          <li>Age <%= row.Age %></li>
+          
+          
+        </div>
+      <form method="post" action="/removeWishItem" >
+        <input type="hidden" id="postId" name="itemId" value="<%= row.Personid %>">
+        <input type="hidden" id="postId" name="Email" value="<%= row.Email %>">
+        <button type="submit" class="btn bg-danger">Remove from Wishlist</button>
+      </form>
+      </div>
+    </div>
+    <% }); %>
+    
+  </div>
+
+</body>
+</html>
